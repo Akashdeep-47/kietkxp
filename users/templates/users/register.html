@@ -1,0 +1,30 @@
+{% extends 'ghar/basereg.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+{% load static  %}
+
+
+<div class="content-section">
+    <form method="POST">
+        {% csrf_token %}
+        <fieldset class="form-group">
+
+            <legend class="border-bottom mb=4" style="text-align:center;">
+                Join Today
+            </legend>
+            {{ form|crispy }}
+            {{ profile_form|crispy }}
+        </fieldset>
+        <div class="form-group" style="text-align:center;">
+            <button class="btn btn-primary"  type="submit">Sign Up</button>
+        </div>
+
+    </form>
+    <div class="border-top pt-3">
+        <small class="text-muted">Already Have An Account? <a class="ml-2" href="{% url 'login' %}">Sign In</a></small>
+    </div>
+</div>
+{% endblock content %}
+
+</body>
+</html>

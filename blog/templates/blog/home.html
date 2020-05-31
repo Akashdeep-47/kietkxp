@@ -1,0 +1,118 @@
+{% extends "blog/base_home.html" %}
+{% block content %}
+    {% for post in posts %}
+       <div class="col-lg-3 col-md-3 col-sm-6">
+                                <div class="card border-0 shadow mb-4">
+                                        <a href="{% url 'post-detail' post.id %}">
+                                        <img class="img-fluid" style="height:250px;"src="{{post.Image.url}}" class="card-img-top">
+                                        </a>
+                                    <hr style="margin-top:2px;margin-bottom:2px;">
+                                    <div class="card-body text-center">
+                                    <a href="{% url 'post-detail' post.id %}">
+                                        <h5 class="card-title mb-2 mt-0" style="font-size:24px;" id="name{{post.id}}"><b>{{ post.Product_name }}</b></h5>
+                                    </a>
+                                    <button id="{{post.id}}" class="wish-btn cart" type="submit" style="float:right;margin-top:3px;">
+                                            <i class="fa fa-heart" style="color:red;"></i>
+                                        </button>
+                                    <h5 class="card-text text-black-50" style="float:left;margin-top:5px;">Rs {{post.price}}</h5>
+                                </div>
+                                </div>
+       </div>
+    {% endfor %}
+
+{% block js %}
+<script>
+console.log('working');
+if(localStorage.getItem('cart') == null){
+var cart = {};
+}
+else
+{
+cart = JSON.parse(localStorage.getItem('cart'));
+document.getElementById('cart').innerHTML = Object.keys(cart).length;
+}
+$('.cart').click(function(){
+console.log('clicked');
+var idstr = this.id.toString();
+console.log(idstr);
+if (cart[idstr] !=undefined){
+cart[idstr] = cart[idstr] + 1;
+
+}
+else
+{
+cart[idstr] = 1;
+}
+console.log(cart);
+localStorage.setItem('cart', JSON.stringify(cart));
+document.getElementById('cart').innerHTML = Object.keys(cart).length;
+updatePopover(cart);
+});
+$('#popcart').popover();
+updatePopover(cart);
+function updatePopover(cart)
+{
+    console.log('We are inside updatePopover');
+    var popStr = "";
+    popStr = popStr + "<h5> Cart for your items in my shopping cart </h5><div class='mx-2 my-2'>";
+    var i = 1;
+    for (var item in cart){
+        popStr = popStr + "<b>" + i + "</b>. ";
+        popStr = popStr + document.getElementById('name' + item).innerHTML.slice(0, 24) + '<br>';
+        i = i+1;
+    }
+    popStr = popStr + "</div>  <button class='btn btn-primary' onclick='clearCart()' id ='clearCart'>Clear Cart</button>  "
+    console.log(popStr);
+    document.getElementById('popcart').setAttribute('data-content', popStr);
+    $('#popcart').popover('hide');
+}
+
+function clearCart() {
+    cart = JSON.parse(localStorage.getItem('cart'));
+    localStorage.clear();
+    cart = {};
+    updatePopover(cart);
+    updateCart(cart);
+
+    }
+
+
+function updateCart(cart) {
+    var sum = null;
+    for (var item in cart) {
+        sum = sum + cart[item];
+        document.getElementById('div' + item).innerHTML = "<button id='minus" + item + "' class='btn btn-primary minus'>-</button> <span id='val" + item + "''>" + cart[item] + "</span> <button id='plus" + item + "' class='btn btn-primary plus'> + </button>";
+    }
+    localStorage.setItem('cart', JSON.stringify(cart));
+    document.getElementById('cart').innerHTML = sum;
+    console.log(cart);
+    updatePopover(cart);
+}
+    
+</script>
+
+{% endblock %}
+
+
+
+     {% if is_paginated %}
+      {% if page_obj.has_previous %}
+         <a class="btn btn-outline-info mb-4" href="?page=1">First</a>
+          <a class="btn btn-outline-info mb-4" href="?page={{page_obj.previous_page_number}}">Previous</a>
+      {% endif %}
+
+      {% for num in page_obj.paginator.page_range %}
+
+        {% if page_obj.number == num %}
+          <a  class="btn btn-info mb-4" href="?page={{ num }}">{{ num }}</a>
+        {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+          <a class="btn btn-outline-info mb-4" href="?page={{ num }}">{{ num }}</a>
+        {% endif %}
+      {% endfor %}
+
+      {% if page_obj.has_next %}
+         <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.next_page_number }}">Next</a>
+          <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.paginator.num_pages }}">Last</a>
+      {% endif %}
+    {% endif %}
+{% endblock content %}

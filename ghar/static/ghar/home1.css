@@ -1,0 +1,189 @@
+.carousel-item {
+  height: 100vh;
+  min-height: 300px;
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.carousel-caption {
+  bottom: 270px;
+}
+
+.carousel-caption h5 {
+  font-size: 45px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-top: 25px;
+}
+
+.carousel-caption p {
+  width: 75%;
+  margin: auto;
+  font-size: 18px;
+  line-height: 1.9;
+}
+
+.navbar-light .navbar-brand {
+  color: #fff;
+  font-size: 25px;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.navbar-light .navbar-nav .active > .nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show > .nav-link {
+  color: #fff;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: #fff;
+}
+
+.navbar-toggler {
+  background: #fff;
+}
+
+.navbar-nav {
+  text-align: center;
+}
+
+.nav-link {
+  padding: .2rem 1rem;
+}
+
+.nav-link.active,.nav-link:focus{
+  color: #fff;
+}
+
+.navbar-toggler {
+  padding: 1px 5px;
+  font-size: 18px;
+  line-height: 0.3;
+}
+
+.navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
+  color: #fff;
+}
+
+
+
+.services
+{
+  margin: 90px auto;
+  text-align: center;
+}
+
+
+.text h5
+{
+  font-weight: 100;
+  font-size: 90px;
+  text-align: centre;
+
+}
+.text p{padding-top:  50px;
+  font-size: 20px;
+}
+
+
+
+<!-- aboutus Container -->
+
+.aboutus1
+{
+  padding: 60px;
+  margin: 100px;
+
+
+}
+.aboutus2
+{
+  padding: 60px;
+  margin: 20px;
+
+
+}
+.aboutus3
+{
+  padding: 60px;
+  margin: 20px;
+
+
+}
+
+.innerbox{
+  padding: 40px;
+}
+
+.fit-image{
+width: 100%;
+object-fit: cover;
+height: 300px; /* only if you want fixed height */
+}
+
+.team{
+
+
+    margin: 40px;
+
+
+}
+
+
+
+.aboutus1
+{
+  margin: 80px;
+ padding: 10px;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.w3-tag {
+  height:15px;
+  width:15px;
+  padding:0;
+  margin-top:6px}
+
+
+
+
+ #contact h2 {
+    font-size: 50px;
+    text-transform: uppercase;
+    color: #303030;
+    font-weight: 600;
+    margin-bottom: 30px;
+
+  }
+.contact1{
+
+ margin: 80px;
+ padding: 10px;
+
+
+
+}
+
+
+
+.footer{
+
+  background-color: #aeb5a7;
+}
+.footer1{
+  font-size: 20px;
+}
+

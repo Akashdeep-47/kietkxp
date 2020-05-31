@@ -1,0 +1,110 @@
+{% extends "blog/basepost_detail.html" %}
+{% block content %}
+            <div class="s_product_text">
+              <h1 style="color:black;" id="name{{post.id}}">{{ object.Product_name }}
+               <button id="{{post.id}}" class="wish-btn cart" type="submit" style="margin-top:3px;">
+                                            <i class="fa fa-heart" style="color:red;"></i>
+                                        </button>
+                </h1>
+                <h3 style="color:blue;">Rs {{object.price}}</h3>
+                <ul class="list">
+                    <li>
+                            <span style="padding-right:23px;">Posted by</span>
+                            :   {{object.posted_by}}
+
+                    </li>
+                     <li>
+
+                            <span style="padding-right:7px;">Date posted</span>
+                            :   {{ object.date_posted|date:"F d, Y" }}
+
+                    </li>
+                </ul>
+
+                <p>
+                   {{object.desc}}
+                </p>
+
+                {% if object.posted_by == user %}
+                <div>
+                <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'post-update' object.id %}">Update</a>
+                <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'post-delete' object.id %}">Delete</a>
+                </div>
+                {% endif %}
+            </div>
+
+{% block js %}
+<script>
+console.log('working');
+if(localStorage.getItem('cart') == null){
+var cart = {};
+}
+else
+{
+cart = JSON.parse(localStorage.getItem('cart'));
+document.getElementById('cart').innerHTML = Object.keys(cart).length;
+}
+$('.cart').click(function(){
+console.log('clicked');
+var idstr = this.id.toString();
+console.log(idstr);
+if (cart[idstr] !=undefined){
+cart[idstr] = cart[idstr] + 1;
+
+}
+else
+{
+cart[idstr] = 1;
+}
+console.log(cart);
+localStorage.setItem('cart', JSON.stringify(cart));
+document.getElementById('cart').innerHTML = Object.keys(cart).length;
+updatePopover(cart);
+});
+$('#popcart').popover();
+updatePopover(cart);
+function updatePopover(cart)
+{
+    console.log('We are inside updatePopover');
+    var popStr = "";
+    popStr = popStr + "<h5> Cart for your items in my shopping cart </h5><div class='mx-2 my-2'>";
+    var i = 1;
+    for (var item in cart){
+        popStr = popStr + "<b>" + i + "</b>. ";
+        popStr = popStr + document.getElementById('name' + item).innerHTML.slice(0, 24) + '<br>';
+        i = i+1;
+    }
+    popStr = popStr + "</div>  <button class='btn btn-primary' onclick='clearCart()' id ='clearCart'>Clear Cart</button>  "
+    console.log(popStr);
+    document.getElementById('popcart').setAttribute('data-content', popStr);
+    $('#popcart').popover('hide');
+}
+
+function clearCart() {
+    cart = JSON.parse(localStorage.getItem('cart'));
+    localStorage.clear();
+    cart = {};
+    updatePopover(cart);
+    updateCart(cart);
+
+    }
+
+
+function updateCart(cart) {
+    var sum = null;
+    for (var item in cart) {
+        sum = sum + cart[item];
+        document.getElementById('div' + item).innerHTML = "<button id='minus" + item + "' class='btn btn-primary minus'>-</button> <span id='val" + item + "''>" + cart[item] + "</span> <button id='plus" + item + "' class='btn btn-primary plus'> + </button>";
+    }
+    localStorage.setItem('cart', JSON.stringify(cart));
+    document.getElementById('cart').innerHTML = sum;
+    console.log(cart);
+    updatePopover(cart);
+}
+    
+</script>
+
+{% endblock %}
+
+
+{% endblock content %}

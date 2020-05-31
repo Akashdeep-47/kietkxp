@@ -1,0 +1,429 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+
+    {% if title %}
+        <title>Django Blog - {{ title }}</title>
+    {% else %}
+        <title>Django Blog</title>
+    {% endif %}
+</head>
+<style>
+
+    body {
+    line-height: 24px;
+    font-size: 14px;
+    font-family: roboto,sans-serif;
+    font-weight: 400;
+    color: #777;
+}
+
+  .header_area {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    transition: background .4s,all .3s linear;
+}
+
+ .row.m0 {
+    margin: 0;
+}
+
+
+.top_menu {
+    background: #fff;
+    height: 40px;
+    line-height: 16px;
+}
+
+
+@media screen and (max-width:767px){
+.top_menu {
+    background: black;
+    height: 0px;
+    line-height: 16px;
+}}
+
+
+.container-fluid {
+    margin: 0;
+    }
+
+.top_menu .float-left p {
+    line-height: 40px;
+    color: #777;
+    font-size: 13px;
+    font-family: roboto,sans-serif;
+    font-weight: 400;
+    margin: 0;
+
+}
+
+@media screen and (max-width:767px){
+.top_menu .float-left p {
+    line-height: 20px;
+    color: #777;
+    font-size: 0px;
+    font-family: roboto,sans-serif;
+    font-weight: 400;
+    margin: 0;}}
+
+.top_menu .right_side {
+    margin-bottom: 0;
+    padding: 12px 0;
+}
+
+.top_menu .right_side li {
+    display: inline-block;
+}
+
+.top_menu .right_side li a {
+    font-size: 12px;
+    color: #777;
+    display: inline-block;
+    border-right: 1px solid rgba(175,175,175,.3);
+    transition: all 300ms linear 0s;
+    text-transform: uppercase;
+    padding: 0 19px;
+}
+
+@media screen and (max-width:767px){
+
+.top_menu .right_side li a {
+    font-size: 0px;
+    color: #777;
+    display: inline-block;
+    border-right: 0px solid rgba(175,175,175,.3);
+    transition: all 300ms linear 0s;
+    text-transform: uppercase;
+    padding: 0 19px;
+}}
+
+a {
+    text-decoration: none;
+    transition: all .3s ease-in-out;
+}
+
+/* lower nav bar styling starts here */
+
+.header_area .main_menu {
+    background: #f8f8f8;
+}
+
+.header_area .navbar {
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    border-top: 1px solid rgba(221,221,221,.38);
+}
+
+@media (max-width: 992px){
+.header_area .navbar .nav {
+    float: left;
+    margin-left:15px;
+}}
+
+@media (max-width: 991px){
+.nav {
+    padding: 0;
+}}
+
+
+img {
+    vertical-align: middle;
+    border-style: none;
+    height:80px;
+    width:185px;
+}
+
+.w-100 {
+    width: 100%!important;
+}
+
+.pr-0 {
+    padding-right: 0!important;
+}
+
+.pull-right {
+    float: right;
+}
+
+.header_area .navbar .nav .nav-item {
+    margin-right: 45px;
+}
+
+@media (max-width: 991px){
+.header_area .navbar .nav .nav-item {
+    margin-right: 0;
+}}
+
+.active {
+    color: #1641ff;
+}
+
+.header_area .navbar .nav .nav-item.submenu {
+    position: relative;
+}
+
+
+
+.header_area .navbar .nav .nav-item {
+    margin-right: 45px;
+}
+
+.header_area .navbar .nav .nav-item:hover .nav-link, .header_area .navbar .nav .nav-item.active .nav-link {
+    color: #1641ff;
+}
+
+.header_area .navbar .nav .nav-item .nav-link {
+    font: 500 12px/80px "Roboto",sans-serif;
+    text-transform: uppercase;
+    color: #222;
+    padding: 0;
+    display: inline-block;
+}
+
+
+.header_area .navbar .nav .nav-item.submenu ul {
+    border: none;
+    padding: 0;
+    border-radius: 0;
+    box-shadow: none;
+    margin:0px;
+    background: #fff;
+}
+
+
+.header_area .navbar .nav .nav-item.submenu ul .nav-item .nav-link {
+    line-height: 45px;
+    color: #222;
+    padding: 0 30px;
+    transition: all 150ms linear;
+    display: block;
+    margin-right: 0;
+}
+
+
+
+.pull-right {
+    float: right;
+}
+
+.navbar-nav {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+
+.header_area .navbar .right_nav hr {
+    height: 80px;
+    width: 1px;
+    background: rgba(221,221,221,.38);
+    padding: 0;
+    margin: 0;
+}
+
+.header_area .navbar .nav.navbar-nav.navbar-right li {
+    margin-left: 25px;
+    margin-right: 0;
+}
+
+
+.header_area .navbar .icons {
+    font-size: 18px;
+    line-height: 80px;
+    display: inline-block;
+    color: #222;
+    min-width: 30px;
+    min-height: 80px;
+    text-align: center;
+    transition: all 300ms linear 0s;
+    padding-right:20px;
+}
+
+@media (max-width: 991px){
+.navbar-toggler span {
+    display: block;
+    width: 35px;
+    height: 4px;
+    background: #1641ff;
+    margin: auto;
+    margin-bottom: 4px;
+    margin-right:14px;
+    transition: all 400ms linear;
+    cursor: pointer;
+}}
+
+@media (max-width: 991px){
+.navbar-toggler {
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    cursor: pointer;
+    margin-top: 27px;
+    margin-bottom: 23px;a
+}}
+
+@media (max-width: 992px){
+.header_area .navbar .nav.navbar-nav.navbar-right {
+    -ms-flex-direction: row;
+    flex-direction: row;
+    margin-bottom: 20px;
+}}
+
+
+
+
+
+
+
+
+
+</style>
+<body>
+<header class="header_area">
+    <div class="top_menu row m0">
+         <div class="container-fluid">
+             <div class="float-left">
+                 <p>Email: kxchangep@gmail.com</p>
+             </div>
+             <div class="float-right">
+                 <ul class="right_side">
+                     <li>
+                     <a href="#">
+                         LOGIN/REGISTER
+                     </a>
+                     </li>
+                     <li>
+                     <a href="#">
+                         CONTACT
+                     </a>
+                     </li>
+                     <li>
+                     <a href="#">
+                         ABOUT
+                     </a>
+                     </li>
+                 </ul>
+             </div>
+         </div>
+    </div>
+     <div class="main_menu">
+      <nav class="navbar navbar-expand-lg navbar-light lower_nav">
+  <div class="container-fluid">
+    <a class="navbar-brand logo_h" href="#"><img  src="{% static 'blog/logo1.jpeg' %}"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+         <span class="navbar-toggler-icon"></span>
+         <span class="navbar-toggler-icon"></span>
+         <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+        <div class="row w-100">
+            <div class="col-lg pr-0">
+            <ul class="nav navbar-nav center_nal pull-right">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#"><b>Home</b></a>
+                </li>
+                <li class="nav-item submenu dropdown">
+                    <a href="#" class="nav-link dropdown toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><b>Shop</b></a>
+                    <ul class="dropdown-menu">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">All-in-one</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link" href="#">Books</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link" href="#">Lab Accessories</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link" href="#">Electronics</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item submenu dropdown">
+                    <a href="#" class="nav-link dropdown toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><b>About Us</b></a>
+                </li>
+                <li class="nav-item submenu dropdown">
+                    <a href="#" class="nav-link dropdown toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><b>Contact Us</b></a>
+                </li>
+
+            </ul>
+            </div>
+            <div class="col-lg-5">
+                <ul class="nav navbar-nav navbar-right right_nav pull-right">
+                    <hr>
+                    <li class="nav-item">
+                        <a href="#" class="icons">
+                            <i class="fa fa-search" aria-hidden="true">
+                            </i>
+                        </a>
+                    </li>
+                    <hr>
+                    <li class="nav-item">
+                        <a href="#" class="icons">
+                            <i class="fa fa-user" aria-hidden="true">
+                            </i>
+                        </a>
+                    </li>
+                    <hr>
+                    <li class="nav-item">
+                        <a href="#" class="icons">
+                            <i class="fa fa-heart" aria-hidden="true">
+                            </i>
+                        </a>
+                    </li>
+                    <hr>
+                    <li class="nav-item">
+                        <a href="#" class="icons">
+                            <i class="fa fa-map" aria-hidden="true">
+                            </i>
+                        </a>
+                    </li>
+                    <hr>
+                </ul>
+            </div>
+        </div>
+    </div>
+  </div>
+      </nav>
+     </div>
+</header>
+
+
+
+
+
+
+
+
+
+
+
+ </main>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

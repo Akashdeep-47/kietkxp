@@ -1,0 +1,362 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+
+    {% if title %}
+        <title>Django Blog - {{ title }}</title>
+    {% else %}
+        <title>Django Blog</title>
+    {% endif %}
+</head>
+
+<style>
+    body {
+  background: #fafafa;
+  color: #333333;
+  margin-top: 8rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: rgb(119, 119, 119);
+}
+
+ul {
+  margin: 0;
+}
+
+.bg-steel {
+  background-color: #5f788a;
+}
+
+.site-header .navbar-nav .nav-link {
+  color: #cbd5db;
+}
+
+.site-header .navbar-nav .nav-link:hover {
+  color: #ffffff;
+}
+
+.site-header .navbar-nav .nav-link.active {
+  font-weight: 500;
+}
+
+}
+
+.article-title {
+  color: #444444;
+}
+
+a.article-title:hover {
+  color: #428bca;
+  text-decoration: none;
+}
+
+.article-content {
+  white-space: pre-line;
+}
+
+.article-img {
+  height: 65px;
+  width: 65px;
+  margin-right: 16px;
+}
+
+.article-metadata {
+  padding-bottom: 1px;
+  margin-bottom: 4px;
+  border-bottom: 1px solid #e3e3e3
+}
+
+.article-metadata a:hover {
+  color: #333;
+  text-decoration: none;
+}
+
+.article-svg {
+  width: 25px;
+  height: 25px;
+  vertical-align: middle;
+}
+
+.account-img {
+  height: 125px;
+  width: 125px;
+  margin-right: 20px;
+  margin-bottom: 16px;
+}
+
+.account-heading {
+  font-size: 2.5rem;
+}
+
+.p_120{
+  padding-top: 120px;
+    padding-bottom: 120px;
+}
+
+.login_box_area .login_box_img .hover{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    text-align: center;
+    width: 100%;
+    transform: translateY(-50%);
+    box-sizing: border-box;
+
+}
+
+
+
+.content-section {
+  background: #ffffff;
+  padding: 10px 20px;
+  border: 1px solid #dddddd;
+  border-radius: 3px;
+  margin-bottom: 20px;
+
+}
+
+.row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.img-fluid{
+   padding-bottom:10px;
+   width:100%;
+   height:405px;
+
+}
+
+.banner_area .banner_inner {
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    width: 100%;
+    min-height: 395px;
+    background:  url("{% static 'ghar/back.jpg' %}") no-repeat center bottom;
+    background-size: cover;
+    z-index: 1;
+}
+
+</style>
+<body>
+    <header class="site-header">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#">KIET Xchange Portal</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="{% url 'myghar' %}">Home</a>
+                </li>
+          {% if user.is_authenticated %}
+                <li class="nav-item">
+                 <a class="nav-link" href="{% url 'logout' %}">Log out</a>
+                </li>
+                <li class="nav-item">
+                 <a class="nav-link" href="#">{{ user.username }}</a>
+                </li>
+          {% else %}
+                 <li class="nav-item">
+                  <a class="nav-link" href="{% url 'login' %}">Sign In</a>
+                 </li>
+               {% endif %}
+
+
+    </header>
+    <main>
+         <section class="banner_area">
+            <div class="banner_inner d-flex align-items-center">
+                <div class="container">
+                    <div class="banner_content text-center">
+                        <h1 style="color:white;">Login/Register</h1>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="login_box_area p_120">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="login_box_img">
+                            <img class="img-fluid" src="{{object.Image.url}}">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+
+                      {% block content %}{% endblock %}
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+<footer class="page-footer font-small stylish-color-dark bg-dark pt-4">
+
+  <!-- Footer Links -->
+  <div class="container text-center bg-dark text-md-left">
+
+    <!-- Grid row -->
+    <div class="row">
+
+      <!-- Grid column -->
+      <div class="col-md-4 mx-auto">
+
+        <!-- Content -->
+        <h5 class="font-weight-bold text-uppercase mt-3 mb-4"style="color: white;font-weight: bold;font-size: 25px;">About Us</h5>
+        <p style="color: white;">We are group of five highly enthusiastic students of Kiet Group Of Institutions,Ghaziabad.Apart from different branches we come up together to form this platform for the college students,where anyone can sold their used second-hand items to the students who needs them in a reasonable brice.</p>
+
+      </div>
+      <!-- Grid column -->
+
+      <hr class="clearfix w-100 d-md-none">
+
+      <!-- Grid column -->
+      <div class="col-md-2 mx-auto">
+
+        <!-- Links -->
+        <h5 class="font-weight-bold text-uppercase mt-3 mb-4" style="color: white;font-size: 25px;">Categories</h5>
+
+        <ul class="list-unstyled">
+          <li>
+            <a href="#!" style="text-decoration: none;color: white;">Books</a>
+          </li>
+          <li>
+            <a href="#!" style="text-decoration: none;color: white;">Lab ACcessories</a>
+          </li>
+          <li>
+            <a href="#!" style="text-decoration: none;color: white;">Electrical Equipments</a>
+          </li>
+          <li>
+            <a href="#!" style="text-decoration: none;color: white;">Others</a>
+          </li>
+        </ul>
+
+      </div>
+      <!-- Grid column -->
+
+      <hr class="clearfix w-100 d-md-none">
+
+      <!-- Grid column -->
+      <div class="col-md-2 mx-auto">
+
+        <!-- Links -->
+        <h5 class="font-weight-bold text-uppercase mt-3 mb-4" style="color: white;font-size: 25px;"> College Links</h5>
+
+        <ul class="list-unstyled">
+          <li>
+            <a href="#!" style="text-decoration: none;color: white;">Kiet Official Website</a>
+          </li>
+          <li>
+            <a href="#!" style="text-decoration: none;color: white;">Kiet Youtube</a>
+          </li>
+          <li>
+            <a href="#!" style="text-decoration: none;color: white;">KIet Instagram</a>
+          </li>
+          <li>
+            <a href="#!" style="text-decoration: none;color: white;">KIET Facebook</a>
+          </li>
+        </ul>
+
+      </div>
+      <!-- Grid column -->
+
+      <hr class="clearfix w-100 d-md-none">
+
+      <!-- Grid column -->
+      <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+
+        <!-- Links -->
+        <h6 class="text-uppercase font-weight-bold"style="color: white;font-weight: bold;margin-top: 15px;font-size: 25px;">Contact</h6>
+        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+        <p style="color: white;">
+          <i class="fas fa-home mr-3" style="color: white;"></i> KIET Grop Of Institutions, Ghaziabad</p>
+        <p style="color: white;">
+          <i class="fas fa-envelope mr-3" style="color: white;"></i> utkarsh2052000.com</p>
+        <p style="color: white;">
+          <i class="fas fa-phone mr-3" style="color: white;"></i> + 91 7054246828</p>
+        <p style="color: white;">
+          <i class="fas fa-print mr-3" style="color: white;"></i> + 91 6392771770</p>
+
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row -->
+
+  </div>
+  <!-- Footer Links -->
+
+  <hr>
+
+
+
+  <!-- Social buttons -->
+  <ul class="list-unstyled list-inline text-center margin-10px">
+    <li class="list-inline-item">
+      <a class="btn-floating btn-fb mx-1">
+        <i class="fab fa-facebook" style="color: darkblue;font-size: 40px;"> </i>
+      </a>
+    </li>
+    <li class="list-inline-item">
+      <a class="btn-floating btn-tw mx-1">
+        <i class="fab fa-twitter" style="color: blue;font-size: 40px;"> </i>
+      </a>
+    </li>
+    <li class="list-inline-item">
+      <a class="btn-floating btn-gplus mx-1">
+        <i class="fab fa-google-plus-g" style="color: red;font-size: 40px;"> </i>
+      </a>
+    </li>
+    <li class="list-inline-item">
+      <a class="btn-floating btn-li mx-1">
+        <i class="fab fa-linkedin-in" style="color: darkblue;font-size: 40px;"> </i>
+      </a>
+    </li>
+    <li class="list-inline-item">
+      <a class="btn-floating btn-dribbble mx-1">
+        <i class="fab fa-dribbble" style="color: pink;font-size: 40px;"> </i>
+      </a>
+    </li>
+  </ul>
+  <!-- Social buttons -->
+<hr>
+<!-- Copyright -->
+  <div class="footer-copyright text-center py-3 bg-dark"style="color: white;">© 2020 Copyright:
+    <a href="https://mdbootstrap.com/"> KietExchangeportal.com</a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+
+    </main>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

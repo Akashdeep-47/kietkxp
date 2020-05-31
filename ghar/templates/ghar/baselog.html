@@ -1,0 +1,1270 @@
+﻿{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+
+
+        <title>KXP-Login</title>
+
+</head>
+
+<style>
+
+.dropdown:hover>.dropdown-menu{
+  display: block;
+}
+    body {
+  background: #fafafa;
+  color: #333333;
+  margin-top: 8rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: rgb(119, 119, 119);
+}
+
+ul {
+  margin: 0;
+}
+
+.bg-steel {
+  background-color: #5f788a;
+}
+
+.site-header .navbar-nav .nav-link {
+  color: #cbd5db;
+}
+
+.site-header .navbar-nav .nav-link:hover {
+  color: #ffffff;
+}
+
+.site-header .navbar-nav .nav-link.active {
+  font-weight: 500;
+}
+
+}
+
+.article-title {
+  color: #444444;
+}
+
+a.article-title:hover {
+  color: #428bca;
+  text-decoration: none;
+}
+
+.article-content {
+  white-space: pre-line;
+}
+
+.article-img {
+  height: 65px;
+  width: 65px;
+  margin-right: 16px;
+}
+
+.article-metadata {
+  padding-bottom: 1px;
+  margin-bottom: 4px;
+  border-bottom: 1px solid #e3e3e3
+}
+
+.article-metadata a:hover {
+  color: #333;
+  text-decoration: none;
+}
+
+.article-svg {
+  width: 25px;
+  height: 25px;
+  vertical-align: middle;
+}
+
+.account-img {
+  height: 125px;
+  width: 125px;
+  margin-right: 20px;
+  margin-bottom: 16px;
+}
+
+.account-heading {
+  font-size: 2.5rem;
+}
+
+.p_120{
+  padding-top: 120px;
+    padding-bottom: 120px;
+}
+
+.login_box_area .login_box_img .hover{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    text-align: center;
+    width: 100%;
+    transform: translateY(-50%);
+    box-sizing: border-box;
+
+}
+
+
+
+.content-section {
+  background: #ffffff;
+  padding: 10px 20px;
+  border: 1px solid #dddddd;
+  border-radius: 3px;
+  margin-bottom: 20px;
+
+}
+
+.row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.img-fluid{
+   padding-bottom:10px;
+   width:100%;
+   height:405px;
+
+}
+
+.banner_area .banner_inner {
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    width: 100%;
+    min-height: 250px;
+    background:  url("{% static 'ghar/backtest.jpg' %}") no-repeat center bottom;
+    background-size: cover;
+    z-index: 1;
+}
+
+
+    body {
+  background: white;
+  color: #333333;
+  margin-top: 0rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: rgb(119, 119, 119);
+}
+
+ul {
+  margin: 0;
+}
+
+.bg-steel {
+  background-color: #5f788a;
+}
+
+.site-header .navbar-nav .nav-link {
+  color: #cbd5db;
+}
+
+.site-header .navbar-nav .nav-link:hover {
+  color: #ffffff;
+}
+
+.site-header .navbar-nav .nav-link.active {
+  font-weight: 500;
+}
+
+}
+
+.article-title {
+  color: #444444;
+}
+
+a.article-title:hover {
+  color: #428bca;
+  text-decoration: none;
+}
+
+.container-fluid {
+    padding: 0 15px!important;
+}
+
+.flex-row-reverse {
+    -ms-flex-direction: row-reverse!important;
+    flex-direction: row-reverse!important;
+}
+
+.cat_product_area .latest_product_inner {
+    padding-top: 30px;
+    margin-bottom: -50px;
+}
+
+.f_p_item{
+   margin-bottom: 50px;
+   text-align: center;
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+
+
+.article-content {
+  white-space: pre-line;
+}
+
+.article-img {
+  height: 65px;
+  width: 65px;
+  margin-right: 16px;
+}
+
+.article-metadata {
+  padding-bottom: 1px;
+  margin-bottom: 4px;
+  border-bottom: 1px solid #e3e3e3
+}
+
+.article-metadata a:hover {
+  color: #333;
+  text-decoration: none;
+}
+
+.article-svg {
+  width: 25px;
+  height: 25px;
+  vertical-align: middle;
+}
+
+.account-img {
+  height: 125px;
+  width: 125px;
+  margin-right: 20px;
+  margin-bottom: 16px;
+}
+
+.account-heading {
+  font-size: 2.5rem;
+}
+
+.p_120{
+  padding-top: 120px;
+    padding-bottom: 120px;
+}
+
+.login_box_area .login_box_img .hover{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    text-align: center;
+    width: 100%;
+    transform: translateY(-50%);
+    box-sizing: border-box;
+
+}
+
+
+
+.content-section {
+  background: #ffffff;
+  padding: 10px 20px;
+  border: 1px solid #dddddd;
+  border-radius: 3px;
+  margin-bottom: 20px;
+
+}
+
+.row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.img-fluid{
+   padding-bottom:10px;
+   width:100%;
+   height:405px;
+
+}
+
+.banner_area .banner_inner {
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    width: 100%;
+    min-height: 250px;
+    background:  url("{% static 'ghar/backtest.jpg' %}") no-repeat center bottom;
+    background-size: cover;
+    z-index: 1;
+    margin-top:13rem;
+}
+
+.offset-lg-1 {
+    margin-left: 8.333333%;
+}
+
+.s_product_text h3 {
+    font-size: 24px;
+    font-weight: 500;
+    color: #222;
+    margin-bottom: 10px;
+}
+
+ h2 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #1641ff;
+    margin-bottom: 15px;
+}
+
+.s_product_text p {
+    padding-top: 20px;
+    border-top: 1px dotted #d5d5d5;
+    margin-top: 20px;
+    margin-bottom: 70px;
+}
+
+.list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.s_product_text .list li {
+    margin-bottom: 5px;
+}
+
+.section_gap {
+    padding: 60px 0;
+}
+
+.l_w_title {
+    background: #f9f9ff;
+    padding-left: 30px;
+}
+
+.widgets_inner {
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.left_widgets {
+    margin-bottom: 30px;
+    background-color: #fff;
+    box-shadow: 0 10px 10px 0 rgba(153,153,153,.1);
+}
+
+.left_sidebar_area{
+   padding-top:30px;
+}
+
+li {
+    margin-bottom: 13px;
+    margin-top:  8px;
+
+}
+
+
+   body {
+    line-height: 24px;
+    font-size: 14px;
+    font-family: roboto,sans-serif;
+    font-weight: 400;
+    color: #777;
+}
+
+  .header_area {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    transition: background .4s,all .3s linear;
+}
+
+ .row.m0 {
+    margin: 0;
+}
+
+
+.top_menu {
+    background: #fff;
+    height: 40px;
+    line-height: 16px;
+}
+
+
+@media screen and (max-width:767px){
+.top_menu {
+    background: black;
+    height: 0px;
+    line-height: 16px;
+}}
+
+
+.container-fluid {
+    margin: 0;
+    }
+
+.top_menu .float-left p {
+    line-height: 40px;
+    color: #777;
+    font-size: 13px;
+    font-family: roboto,sans-serif;
+    font-weight: 400;
+    margin: 0;
+
+}
+
+@media screen and (max-width:767px){
+.top_menu .float-left p {
+    line-height: 20px;
+    color: #777;
+    font-size: 0px;
+    font-family: roboto,sans-serif;
+    font-weight: 400;
+    margin: 0;}}
+
+.top_menu .right_side {
+    margin-bottom: 0;
+    padding: 12px 0;
+}
+
+.top_menu .right_side li {
+    display: inline-block;
+}
+
+.top_menu .right_side li a {
+    font-size: 12px;
+    color: #777;
+    display: inline-block;
+    border-right: 1px solid rgba(175,175,175,.3);
+    transition: all 300ms linear 0s;
+    text-transform: uppercase;
+    padding: 0 19px;
+}
+
+@media screen and (max-width:767px){
+
+.top_menu .right_side li a {
+    font-size: 0px;
+    color: #777;
+    display: inline-block;
+    border-right: 0px solid rgba(175,175,175,.3);
+    transition: all 300ms linear 0s;
+    text-transform: uppercase;
+    padding: 0 19px;
+}}
+
+a {
+    text-decoration: none;
+    transition: all .3s ease-in-out;
+    }
+
+/* lower nav bar styling starts here */
+
+.header_area .main_menu {
+    background: #f8f8f8;
+}
+
+.header_area .navbar {
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    border-top: 1px solid rgba(221,221,221,.38);
+}
+
+@media (max-width: 992px){
+.header_area .navbar .nav {
+    float: left;
+    margin-left:15px;
+}}
+
+@media (max-width: 991px){
+.nav {
+    padding: 0;
+}}
+
+
+.kxplogo {
+    vertical-align: middle;
+    border-style: none;
+    height:80px;
+    width:185px;
+}
+
+.w-100 {
+    width: 100%!important;
+}
+
+.pr-0 {
+    padding-right: 0!important;
+}
+
+.pull-right {
+    float: right;
+}
+
+.header_area .navbar .nav .nav-item {
+    margin-right: 45px;
+}
+
+@media (max-width: 991px){
+.header_area .navbar .nav .nav-item {
+    margin-right: 0;
+}}
+
+.active {
+    color: #1641ff;
+}
+
+.header_area .navbar .nav .nav-item.submenu {
+    position: relative;
+}
+
+
+
+.header_area .navbar .nav .nav-item {
+    margin-right: 45px;
+}
+
+.header_area .navbar .nav .nav-item:hover .nav-link, .header_area .navbar .nav .nav-item.active .nav-link {
+    color: #1641ff;
+}
+
+.header_area .navbar .nav .nav-item .nav-link {
+    font: 500 12px/80px "Roboto",sans-serif;
+    text-transform: uppercase;
+    color: #222;
+    padding: 0;
+    display: inline-block;
+}
+
+@media (max-width:991px){
+  .header_area .navbar .nav .nav-item .nav-link {
+    font: 500 12px/40px "Roboto",sans-serif;
+    text-transform: uppercase;
+    color: #222;
+    padding: 0;
+    display: inline-block;
+}}
+
+
+.header_area .navbar .nav .nav-item.submenu ul {
+    border: none;
+    padding: 0;
+    border-radius: 0;
+    box-shadow: none;
+    margin:0px;
+    background: #fff;
+}
+
+
+.header_area .navbar .nav .nav-item.submenu ul .nav-item .nav-link {
+    line-height: 40px;
+    color: #222;
+    padding: 0 60px ;
+    transition: all 150ms linear;
+    display: block;
+    margin-right: 0;
+    margin-left:35px;
+    font-size:13px;
+
+}
+
+.header_area .navbar .nav .nav-item.submenu ul .nav-item .nav-link:hover {
+    background:blue;
+    color: white;
+}
+
+.pull-right {
+    float: right;
+}
+
+.navbar-nav {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+
+.header_area .navbar .right_nav hr {
+    height: 80px;
+    width: 1px;
+    background: rgba(221,221,221,.38);
+    padding: 0;
+    margin: 0;
+}
+
+.header_area .navbar .nav.navbar-nav.navbar-right li {
+    margin-left: 25px;
+    margin-right: 0;
+}
+
+
+.header_area .navbar .icons {
+    font-size: 18px;
+    line-height: 80px;
+    display: inline-block;
+    color: #222;
+    min-width: 30px;
+    min-height: 80px;
+    text-align: center;
+    transition: all 300ms linear 0s;
+    margin-right:17px;
+}
+
+.header_area .navbar .icons:hover{
+   font-size:30px;
+   color:blue;
+}
+
+
+@media (max-width: 991px){
+.navbar-toggler span {
+    display: block;
+    width: 35px;
+    height: 4px;
+    background: #1641ff;
+    margin: auto;
+    margin-bottom: 4px;
+    margin-right:14px;
+    transition: all 400ms linear;
+    cursor: pointer;
+}}
+
+@media (max-width: 991px){
+.navbar-toggler {
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    cursor: pointer;
+    margin-top: 27px;
+    margin-bottom: 23px;
+}}
+
+@media (max-width: 992px){
+.header_area .navbar .nav.navbar-nav.navbar-right {
+    -ms-flex-direction: row;
+    flex-direction: row;
+    margin-bottom: 20px;
+}}
+
+#myInput {
+  box-sizing: border-box;
+  background-image: url('searchicon.png');
+  background-position: 14px 12px;
+  background-repeat: no-repeat;
+  font-size: 16px;
+  padding: 14px 20px 12px 45px;
+  border: none;
+  border-bottom: 1px solid #ddd;
+}
+
+/* The search field when it gets focus/clicked on */
+#myInput:focus {outline: 3px solid #ddd;}
+
+/* The container <div> - needed to position the dropdown content */
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f6f6f6;
+  min-width: 230px;
+  margin-top: 1px;
+  z-index: 0.5;
+
+}
+
+.show {display:block;}
+
+.dropdown-content input{
+
+}
+
+.brn1{
+
+}
+
+
+#myBtn {
+  display: none; /* Hidden by default */
+  position: fixed; /* Fixed/sticky position */
+  bottom: 20px; /* Place the button at the bottom of the page */
+  right: 30px; /* Place the button 30px from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  border: none; /* Remove borders */
+  outline: none; /* Remove outline */
+  background-color: red; /* Set a background color */
+  color: white; /* Text color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 15px; /* Some padding */
+  border-radius: 10px; /* Rounded corners */
+  font-size: 18px; /* Increase font size */
+}
+
+#myBtn:hover {
+  background-color: #555; /* Add a dark-grey background on hover */
+}
+
+.text_categories{
+  font-size:90px;
+}
+@media screen and (max-width:767px){
+.text_categories {
+   font-size:50px;
+   color:blue;
+
+}}
+
+.dropdown-menu.user{
+   position:absolute;
+}
+@media (max-width:424px){
+ .header_area .navbar .icons {
+    font-size: 12px;
+    line-height: 80px;
+    display: inline-block;
+    color: #222;
+    min-width: 20px;
+    min-height: 40px;
+    text-align: center;
+    transition: all 300ms linear 0s;
+    margin-right:14px;
+}}
+
+@media (max-width:330px){
+ .header_area .navbar .icons:hover{
+   font-size:12px;
+   color:blue;
+}
+}
+
+.bg{
+  transition: all 150ms linear;
+  color:black;
+  }
+
+.bg:hover{
+  background-color:blue;
+  color:white;
+
+  }
+
+    .search-box{
+  position: absolute;
+  transform: translate(-50%,-50%);
+  background: #2f3640;
+  height: 60px;
+  border-radius: 50px;
+  padding: 10px;
+  margin-top: 35px;
+  margin-left: 100px;
+  width: 280px;
+
+}
+.search-btn{
+  color: #e84118;
+  float: right;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  transition: all 300ms linear 0s;
+}
+
+.search-btn:hover{
+  background-color:blue;
+  color:white;
+}
+.search-txt {
+  border: none;
+  background: none;
+  outline: none;
+  float: left;
+  padding: 0;
+  color: white;
+  font-size: 16px;
+  transition: 0.4s;
+  line-height: 40px;
+  width: 200px;
+}
+
+
+.user-box {
+    position: absolute;
+    transform: translate(-50%,-50%);
+    background: #2f3640;
+    height: 100px;
+    border-radius: 50px;
+    padding: 10px;
+    margin-top: 60px;
+    margin-left: 80px;
+    width: 300px;
+}
+.user-box1 {
+    position: absolute;
+    transform: translate(-50%,-50%);
+    background: #2f3640;
+    height: 50px;
+    border-radius: 50px;
+    padding: 10px;
+    margin-top: 20px;
+    margin-left: 120px;
+    width: 180px;
+    float: left;
+
+}
+.user-btn {
+    color: #e84118;
+    float: right;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0px;
+    margin-top: 5px;
+
+}
+
+
+.user-txt {
+  border: none;
+  background: none;
+  outline: none;
+  float: left;
+  padding: 0;
+  color: white;
+  font-size: 16px;
+  transition: 0.4s;
+  line-height: 20px;
+  width: 200px;
+}
+
+html{
+scroll-behavior: smooth;
+}
+
+
+
+
+</style>
+<body>
+<header class="header_area">
+    <div class="top_menu row m0">
+         <div class="container-fluid">
+             <div class="float-left">
+                 <p>Email: kxchangep@gmail.com</p>
+             </div>
+             <div class="float-right">
+                 <ul class="right_side">
+
+                     {% if user.is_authenticated %}
+                     <li>
+                     <a href="{% url 'logout' %}">
+                         LOGOUT
+                     </a>
+                     </li>
+
+                     {% else %}
+                      <li>
+                     <a href="{% url 'login' %}">
+                         LOGIN/REGISTER
+                     </a>
+                     </li>
+                     {% endif %}
+                     <li>
+                     <a href="#about">
+                         CONTACT
+                     </a>
+                     </li>
+                     <li>
+                     <a href="#about">
+                         ABOUT
+                     </a>
+                     </li>
+                 </ul>
+             </div>
+         </div>
+    </div>
+     <div class="main_menu">
+      <nav class="navbar navbar-expand-lg navbar-light lower_nav">
+  <div class="container-fluid">
+    {% if not user.is_authenticated %}
+     <a class="navbar-brand logo_h" href="{% url 'myghar' %}"><img class="kxplogo" src="{% static 'ghar/kxplogo.jpeg' %}"></a>
+    {% else %}
+     <a class="navbar-brand logo_h" href="{% url 'blog-home' %}"><img class="kxplogo" src="{% static 'ghar/kxplogo.jpeg' %}"></a>
+    {% endif %}
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+         <span class="navbar-toggler-icon"></span>
+         <span class="navbar-toggler-icon"></span>
+         <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+        <div class="row w-100">
+            <div class="col-lg pr-0">
+            <ul class="nav navbar-nav center_nal pull-right">
+                 {% if user.is_authenticated %}
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'blog-home' %}"><b>Home</b></a>
+                </li>
+                {% else %}
+                 <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'myghar' %}"><b>Home</b></a>
+                </li>
+                {% endif %}
+                {% if user.is_authenticated %}
+                <li class="nav-item submenu dropdown">
+                    <a href="#" class="nav-link dropdown toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><b>Shop</b></a>
+                    <ul class="dropdown-menu">
+
+                        <li class="nav-item" style="margin-right:0px;">
+                            <a class="nav-link" style="margin-left:0px;" href="{% url 'blog-home' %}"><b>All-in-one</b></a>
+                        </li>
+                         <li class="nav-item" style="margin-right:0px;">
+                            <a class="nav-link" style="margin-left:0px;" href="{% url 'post-books' %}"><b>Books</b></a>
+                        </li>
+                         <li class="nav-item" style="margin-right:0px;">
+                            <a class="nav-link" style="margin-left:0px;" href="{% url 'post-lab' %}"><b>Lab Acce</b></a>
+                        </li>
+                         <li class="nav-item" style="margin-right:0px;">
+                            <a class="nav-link" style="margin-left:0px;" href="{% url 'post-electronics' %}"><b>Electronics</b></a>
+                        </li>
+                    </ul>
+                </li>
+                {% else %}
+
+                <li class="nav-item submenu dropdown">
+                    <a href="#" class="nav-link dropdown toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><b>Shop</b></a>
+                    <ul class="dropdown-menu">
+
+                        <li class="nav-item" style="margin-right:0px;">
+                            <a class="nav-link" style="margin-left:0px;" href="{% url 'login' %}"><b>All-in-one</b></a>
+                        </li>
+                         <li class="nav-item" style="margin-right:0px;">
+                            <a class="nav-link" style="margin-left:0px;" href="{% url 'login' %}"><b>Books</b></a>
+                        </li>
+                         <li class="nav-item" style="margin-right:0px;">
+                            <a class="nav-link" style="margin-left:0px;" href="{% url 'login' %}"><b>Lab Acce</b></a>
+                        </li>
+                         <li class="nav-item" style="margin-right:0px;">
+                            <a class="nav-link" style="margin-left:0px;" href="{% url 'login' %}"><b>Electronics</b></a>
+                        </li>
+                    </ul>
+                </li>
+                {% endif %}
+                <li class="nav-item submenu dropdown">
+                   {% if user.is_authenticated %}
+                    <a class="nav-link" href="{% url 'post-create' %}"><b>Sell</b></a>
+                    {% else %}
+                    <a class="nav-link" href="#about"><b>About Us</b></a>
+                    {% endif %}
+               </li>
+                <li class="nav-item submenu dropdown">
+                    <a class="nav-link" href="#about"><b>Contact Us</b></a>
+                </li>
+
+            </ul>
+            </div>
+            <div class="col-lg-5">
+                <ul class="nav navbar-nav navbar-right right_nav pull-right">
+                    {% if user.is_authenticated %}
+                    <hr>
+
+                    <li class="nav-item">
+                        <form method="get" name="search" action="/search/">
+                        <a href="#" class="icons">
+                            <i class="fa fa-search" onclick="myFunction()"  aria-hidden="true"></i></a>
+                        <div id="myDropdown" class="dropdown-content">
+                           <div class="search-box">
+                            <input  id="search" class="search-txt" type="text" name="search" placeholder="Type to search"/>
+                            <button class="search-btn"type="submit">
+                                 <i class='fas fa-search'></i>
+                            </button>
+
+
+                           </div>
+
+                        </div>
+                        </form>
+                    </li>
+                    {% endif %}
+                    <hr>
+                     <li class="nav-item">
+                        <a href="#" class="icons"><i class="fa fa-user" onclick="myFunction1()"  aria-hidden="true"></i></a>
+                        <div id="myDropdown1" class="dropdown-content">
+                           <div class="user-box">
+                            <div class="user-box1">
+                                {% if user.is_authenticated %}
+                                <b><p style="margin-left:5px;" class="user-txt" href="#" >{{user.username}}</p></b><br>
+                                <a style="margin-left:5px;" class="user-txt" href="{% url 'logout' %}" >Logout</a>
+                                {% else %}
+                                 <b><p style="margin-left:5px;" class="user-txt" href="#" >{{user.username}}</p></b><br>
+                                <b><a style="margin-left:5px;" class="user-txt" href="{% url 'login' %}" >Login</a></b>
+                                {% endif %}
+                          </div>
+                            <a class="user-btn" href="#">
+                                 <i class='fas fa-user' style="font-size: 30px;"></i>
+                            </a>
+
+
+                           </div>
+
+                   </div>
+                    </li>
+                    <hr>
+                    <li class="nav-item">
+                        <a href="#" class="icons">
+                             <i   class="fa fa-heart " id="popcart" aria-hidden="true" data-container="body" data-toggle="popover" data-placement="bottom" data-html="true" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+
+                                 <span id="cart"></span>
+                            </i>
+                       </a>
+                    </li>
+                    <hr>
+                    <li class="nav-item">
+                        <a href="https://maps.app.goo.gl/g93rwL2VHTi152s9A" class="icons">
+                            <i class="fa fa-map-marker" aria-hidden="true">
+                            </i>
+                        </a>
+                    </li>
+                    <hr>
+                </ul>
+            </div>
+        </div>
+    </div>
+  </div>
+      </nav>
+     </div>
+</header>
+
+
+    <main>
+         <section class="banner_area">
+            <div class="banner_inner d-flex align-items-center">
+                <div class="container">
+                    <div class="banner_content text-center">
+                        <h1 style="color:white;font-family: 'Courgette', cursive;">Login/Register</h1>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="row"></div>
+        <div class="col-md-12 mt-2 " >
+          {% if messages %}
+            {% for message in messages %}
+              <div style="width:100%; text-align:center; " class="alert alert-{{ message.tags }} alert-dismissible fade show">
+                {{ message }}
+                   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+              </div>
+            {% endfor %}
+          {% endif %}
+
+        </div>
+        <section class="login_box_area p_120">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="login_box_img">
+                            <img class="img-fluid" src="{% static 'ghar/register2.jpg' %}">
+                            <div class="hover">
+                                <h4 style="color:white;">New to our website?</h4>
+                                <p style="color:white;">Come register and get a chance to peep into the content.</p>
+                                <a class="btn btn-primary" href="{% url 'register' %}">Create an account</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+
+                      {% block content %}{% endblock %}
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+<!-- Footer -->
+<footer class="page-footer font-small stylish-color-dark bg-dark pt-4">
+
+  <!-- Footer Links -->
+  <div class="container text-center bg-dark text-md-left">
+
+    <!-- Grid row -->
+    <div class="row">
+
+      <!-- Grid column -->
+      <div id="about" class="col-md-4 mx-auto">
+
+        <!-- Content -->
+        <h5 class="font-weight-bold text-uppercase mt-3 mb-4"style="color: white;font-weight: bold;font-size: 25px;">About Us</h5>
+        <p style="color: white;">We are group of five highly enthusiastic students of KIET Group Of Institutions,Ghaziabad. Apart from different branches we come up together to form this platform for the college students,where anyone can sell their used items to the students who needs them at a reasonable price.</p>
+
+      </div>
+      <!-- Grid column -->
+
+      <hr class="clearfix w-100 d-md-none">
+
+      <!-- Grid column -->
+      <div class="col-md-2 mx-auto">
+
+        <!-- Links -->
+        <h5 class="font-weight-bold text-uppercase mt-3 mb-4" style="color: white;font-size: 25px;">Shop</h5>
+
+        <ul class="list-unstyled">
+          <li>
+            <a href="{% url 'post-books' %}" style="text-decoration: none;color: white;">Books</a>
+          </li>
+          <li>
+            <a href="{% url 'post-lab' %}" style="text-decoration: none;color: white;">Lab ACcessories</a>
+          </li>
+          <li>
+            <a href="{% url 'post-electronics' %}" style="text-decoration: none;color: white;">Electrical Equipments</a>
+          </li>
+          <li>
+            <a href="{% url 'post-others' %}" style="text-decoration: none;color: white;">Others</a>
+          </li>
+        </ul>
+
+      </div>
+      <!-- Grid column -->
+
+      <hr class="clearfix w-100 d-md-none">
+
+      <!-- Grid column -->
+      <div class="col-md-2 mx-auto">
+
+        <!-- Links -->
+        <h5 class="font-weight-bold text-uppercase mt-3 mb-4" style="color: white;font-size: 25px;">Links</h5>
+
+        <ul class="list-unstyled">
+          <li>
+            <a href="https://www.kiet.edu/" style="text-decoration: none;color: white;">Kiet Official Website</a>
+          </li>
+          <li>
+            <a href="https://www.youtube.com/channel/UC4rxBQyVV00oGX9-m2aqKYw" style="text-decoration: none;color: white;">Kiet Youtube</a>
+          </li>
+          <li>
+            <a href="https://www.facebook.com/groups/887103991313966/" style="text-decoration: none;color: white;">KIET Facebook</a>
+          </li>
+        </ul>
+
+      </div>
+      <!-- Grid column -->
+
+      <hr class="clearfix w-100 d-md-none">
+
+      <!-- Grid column -->
+      <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+
+        <!-- Links -->
+        <h6 class="text-uppercase font-weight-bold"style="color: white;font-weight: bold;margin-top: 15px;font-size: 25px;">Contact</h6>
+        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+        <p style="color: white;">
+          <i class="fas fa-home mr-3" style="color: white;"></i> KIET Grop Of Institutions, Ghaziabad</p>
+        <p style="color: white;">
+          <i class="fas fa-envelope mr-3" style="color: white;"></i> kxchangep@gmail.com</p>
+        <p style="color: white;">
+          <i class="fas fa-phone mr-3" style="color: white;"></i> + 91 7054246828</p>
+        <p style="color: white;">
+          <i class="fas fa-print mr-3" style="color: white;"></i> + 91 6392771770</p>
+
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row -->
+
+  </div>
+  <!-- Footer Links -->
+
+  <hr>
+
+
+
+  <!-- Social buttons -->
+  <ul class="list-unstyled list-inline text-center margin-10px">
+    <li class="list-inline-item">
+      <a class="btn-floating btn-tw mx-1" href="https://www.instagram.com/kietxchange/">
+        <i class="fab fa-instagram" style="color:#d10081;font-size: 40px;"> </i>
+      </a>
+    </li>
+    <li class="list-inline-item">
+      <a class="btn-floating btn-gplus mx-1" href="https://twitter.com/KietPortal">
+        <i class="fab fa-twitter" style="color:#00acee;font-size: 40px;"> </i>
+      </a>
+    </li>
+   <li class="list-inline-item">
+      <a class="btn-floating btn-fb mx-1" href="https://www.facebook.com/KIET-Xchange-Portal-100157411709501/">
+        <i class="fab fa-facebook" style="color: darkblue;font-size: 40px;"> </i>
+      </a>
+    </li>
+
+  </ul>
+  <!-- Social buttons -->
+<hr>
+<!-- Copyright -->
+  <div class="footer-copyright text-center py-3 bg-dark"style="color: white;">© 2020 Copyright:
+    <a href="http://kxp.herokuapp.com"> Kxp.herokuapp.com</a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+
+    </main>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script>
+  function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+
+</script>
+<script>
+function myFunction1() {
+  document.getElementById("myDropdown1").classList.toggle("show");
+}</script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+{% block js %}  {% endblock%}
+</body>
+</html>
